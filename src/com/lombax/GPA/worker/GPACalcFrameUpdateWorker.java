@@ -68,10 +68,15 @@ public class GPACalcFrameUpdateWorker  extends SwingWorker<Integer, String>{
 		gpaCalcFrame.panel.removeAll();
 		gpaList.clear();
 		creditsList.clear();
+		int i = 0;
 		for(SliderPanel sliderPanel: sliderList){
+			sliderPanel.hasSeparator(sliderList.indexOf(sliderPanel)==sliderList.size()-1?false:true);
+			sliderPanel.revalidate();
+			sliderPanel.repaint();
 			gpaCalcFrame.panel.add(sliderPanel);
 			gpaList.add(sliderPanel.txtGPA);
 			creditsList.add(sliderPanel.txtCredits);
+			i++;
 		}
 		gpaCalcFrame.panel.validate();
 		gpaCalcFrame.scrollPane.validate();

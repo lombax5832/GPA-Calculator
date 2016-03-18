@@ -28,7 +28,11 @@ public class SliderPanel extends JPanel {
 	public JFormattedTextField txtGPA;
 	public JFormattedTextField txtCredits;
 	
+	private JSeparator separator;
+	
+	
 	public SliderPanel() {
+		
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {0, 0, 0};
@@ -83,7 +87,7 @@ public class SliderPanel extends JPanel {
 		gbc_txtCredits.gridy = 2;
 		add(txtCredits, gbc_txtCredits);
 		
-		JSeparator separator = new JSeparator();
+		separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
 		GridBagConstraints gbc_separator = new GridBagConstraints();
 		gbc_separator.fill = GridBagConstraints.HORIZONTAL;
@@ -103,6 +107,10 @@ public class SliderPanel extends JPanel {
 			e.printStackTrace();
 		}
 		return formatter;
+	}
+	
+	public void hasSeparator(boolean hasSeparator){
+		this.separator.setVisible(hasSeparator);
 	}
 
 }
